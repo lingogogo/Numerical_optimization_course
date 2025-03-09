@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{CS5321 Numerical Optimization Homework 3}
+\author{Due 1/6/2023}
+\date{}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item (20\%) In the trust region method (unit 3), we need to solve the model problem $m_k$
+$$\min_{\vec{p}} m_k(\vec{p})=f_k+\vec{g}_k^T\vec{p}+\frac{1}{2}\vec{p}^{\;T}B_k\vec{p}.$$
+$$\mbox{s.t.} \|\vec{p}\|\le \Delta$$ 
+Show that $\vec{p}*$ is the optimal solution if and only if it satisfies 
+$$(B_k+\lambda I) \vec{p}* = - \vec{g} $$
+$$\lambda (\Delta -\|\vec{p}*\|)=0$$
+where $B_k+\lambda I$ is positive definite.  (Hint: using KKT conditions.)
+
+ \item (15\%) Prove that for the matrix $ \left[ \begin{array}{cc}
+    G & A^T \\ A & 0
+    \end{array} \right]$, if $A$ has full row-rank and the reduced Hessian $ Z^TGZ $ is positive definite, where span$\lbrace Z \rbrace$ is the null space of span$\lbrace A^T \rbrace $ then the matrix is nonsingular. (You may reference Lemma 16.1 in the textbook.)
+
+
+\item (30\%) Consider the problem
+    \begin{equation}\label{eqn2}
+        \begin{array}{cc}
+          \displaystyle\min_{x_1,x_2} & (x_1-3)^2+10x_2^2 \\
+          \mbox{s.t.} & x_1^2+x_2^2 -1 \le 0
+        \end{array}
+    \end{equation}
+\begin{enumerate}
+\item Write down the KKT conditions for (\ref{eqn2}).
+\item Solve the KKT conditions and find the optimal solutions, including the Lagrangian parameters.
+\item Compute the reduced Hessian and check the second order conditions for the solution.
+\end{enumerate}
+
+
+\item (20\%) Consider the following constrained optimization problem
+ \begin{eqnarray*}
+   \min_{x_1,x_2} && x_1^3+2x_2^2\\
+   \mbox{s.t.} && x_1^2+x_2^2-1=0 \\
+ \end{eqnarray*}
+\begin{enumerate}
+\item What is the optimal solution and the optimal Lagrangian multiplier?
+\item Formulate this problem to the equation of augmented Lagrangian method, and derive the gradient of Lagrangian.
+\item Let $\rho_0=-1, \mu_0=1$.  What is $x_1$ if it is solved by the augmented Lagrangian problem.
+\item To make the solution of augmented Lagrangian method exact, what is the minimum $\rho$ should be?
+\end{enumerate}
+
+\item (15\%) Consider the following constrained optimization problem
+ \begin{eqnarray*}
+   \min_{x_1,x_2} && -3x_1+x_2\\
+   \mbox{s.t.} && 2x_1+x_2 \le 20 \\
+   					&&  x_1+2x_2 \le 16 \\
+   					&& x_1, x_2 \ge 0
+ \end{eqnarray*}
+Formulate this problem to the equation of the interior point method, and derive the gradient and Jacobian.
+
+
+\end{enumerate}
+
+
+
+\end{document}
